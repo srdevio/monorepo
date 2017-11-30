@@ -9,7 +9,7 @@ pipeline {
       steps {
         //pipeline = load 'pants/Jenkinsfile'
         echo 'Loading Another Jenkinsfile'
-        echo env.CHANGE_URL
+        echo currentBuild.changeSets
       }
     }
   }
