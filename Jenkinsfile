@@ -7,7 +7,6 @@ pipeline {
     stage('Load') {
       agent any
       steps {
-        // From shared libs. Assumes SERVICE_NAME and REPO_NAME exist.
         pipeline = load 'pants/Jenkinsfile'
       }
     }
