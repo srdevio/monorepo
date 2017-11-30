@@ -7,7 +7,8 @@ pipeline {
     stage('Load') {
       agent any
       steps {
-        pipeline = load 'pants/Jenkinsfile'
+        //pipeline = load 'pants/Jenkinsfile'
+        echo 'HEY'
       }
     }
   }
