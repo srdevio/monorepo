@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pants
+spec:
+  selector:
+    app: pants
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: pants
+  labels:
+    app: pants
+spec:
+  selector:
+    matchLabels:
+      app: pants
+  template:
+    metadata:
+      labels:
+        app: pants
+    spec:
+      containers:
+      - name: nginx
+        image: gcr.io/sr-poc-message-delivery/${image_name}/${image_name}:${build_number}
+        ports:
+        - containerPort: 80
