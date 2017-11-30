@@ -8,7 +8,8 @@ pipeline {
       agent any
       steps {
         //pipeline = load 'pants/Jenkinsfile'
-        echo 'HEY'
+        echo 'Loading Another Jenkinsfile'
+        echo env.JOB_NAME
       }
     }
   }
